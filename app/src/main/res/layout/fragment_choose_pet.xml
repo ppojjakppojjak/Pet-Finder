@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="당신의 반려동물을 골라 주세요"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="20dp">
+        <Button
+            android:id="@+id/btn_choose_dog"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="DOG"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginRight="20dp">
+        <Button
+            android:id="@+id/btn_choose_cat"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="CAT"/>
+    </LinearLayout>
+
+</LinearLayout>
