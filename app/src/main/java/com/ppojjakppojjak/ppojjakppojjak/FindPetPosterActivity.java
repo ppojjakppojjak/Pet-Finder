@@ -157,6 +157,28 @@ public class FindPetPosterActivity extends AppCompatActivity {
         }
     }
 
+    public void share() {
+        View container;
+        container = getWindow().getDecorView();
+        container.buildDrawingCache();
+        Bitmap captureView = container.getDrawingCache();
+        String address = Environment.getExternalStorageDirectory().getAbsolutePath() + "/capture.jpeg";
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(address);
+            captureView.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+        } catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Uri uri = Uri.fromFile(new File(address));
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_STREAM, uri);
+        intent.setType("image/*");
+        startActivity(Intent.createChooser(intent, "공유"));
+    }
+
     public void showDatePickerDialog(View v) {
         android.support.v4.app.DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
