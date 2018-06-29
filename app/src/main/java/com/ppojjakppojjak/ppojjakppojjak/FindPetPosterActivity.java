@@ -11,8 +11,8 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -34,12 +34,12 @@ import static com.ppojjakppojjak.ppojjakppojjak.R.layout.activity_find_pet_poste
 public class FindPetPosterActivity extends AppCompatActivity {
 
     public static TextView tvLostDay;
-    public static Button btnSavePoster;
+    public static TextView tvShare;
     List<UploadImage> items = new ArrayList<>();
     UploadImage[] item = new UploadImage[2];
     ImageButton ibtnUploadImage1;
     ImageButton ibtnUploadImage2;
-    Button btnBack;
+    ImageButton ibtnBack;
     int imageCount = 0;
 
     public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
@@ -66,8 +66,11 @@ public class FindPetPosterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(activity_find_pet_poster);
 
-        btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ibtnBack = findViewById(R.id.ibtn_back);
+        ibtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -82,8 +85,8 @@ public class FindPetPosterActivity extends AppCompatActivity {
             }
         });
 
-        btnSavePoster = findViewById(R.id.btn_save_poster);
-        btnSavePoster.setOnClickListener(new View.OnClickListener() {
+        tvShare = findViewById(R.id.tv_share);
+        tvShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

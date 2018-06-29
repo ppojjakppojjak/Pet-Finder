@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FindPetPosterActivity"
     android:background="#F2EDEE"
-    android:id="@+id/linear"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_find_pet_poster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
 
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F2EDEE">
+        android:background="#F2EDEE"
+        android:layout_below="@+id/toolbar">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/ic_chevron_left_black_24dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -131,6 +132,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:hint="이름"/>
 
                 <TextView
@@ -141,6 +143,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:hint="견종"/>
 
                 <TextView
@@ -152,6 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:textAlignment="center"
                     android:hint="나이"/>
 
                 <TextView
@@ -162,6 +166,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:hint="성별"/>
 
             </LinearLayout>
@@ -195,38 +200,32 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:textAlignment="center"
-                android:hint="연락처"
-                android:background="@android:color/transparent"/>
+                android:hint="연락처"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="30dp">
+            android:orientation="horizontal">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:hint="추가로 남길 말을 입력해 주세요..."
+                android:hint="추가로 남길 말을 입력하세요..."
                 android:background="@android:color/transparent"/>
 
         </LinearLayout>
 
             <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="5pt"
-                android:text="떼지 말아 주세요! 전단지는 강아지를 찾으면 바로 수거하겠습니다."/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="포스터로 저장하기"
-                android:id="@+id/btn_save_poster"/>
+                android:text="떼지 말아 주세요! 전단지는 강아지를 찾으면 바로 수거하겠습니다."
+                android:layout_marginBottom="30dp"/>
 
         </LinearLayout>
 
@@ -234,4 +233,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>
