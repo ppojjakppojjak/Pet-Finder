@@ -1,43 +1,47 @@
 package com.ppojjakppojjak.ppojjakppojjak;
 
-import android.content.Context;
-import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.IOException;
 
-public class Pet_calling_sound extends AppCompatActivity {
+public class cat_calling_sound extends AppCompatActivity {
 
     Button btn1, btn2;
     MediaPlayer mp;
     TextView text;
-
+    public static String BOARD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cat_calling_sound);
 
+        final Spinner spinner = (Spinner)findViewById(R.id.cat_category_bar);
         btn1 = (Button)findViewById(R.id.button1);
         btn2 = (Button)findViewById(R.id.button2);
 
-        //text = (TextView)findViewById(R.id.text1);
+        ArrayAdapter adapter  = ArrayAdapter.createFromResource(this,R.array.cat_sound_list,android.R.layout.simple_spinner_item);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                BOARD = (String) spinner.getItemAtPosition(i).toString();
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-        mp = MediaPlayer.create(Pet_calling_sound.this, R.raw.cat_come_on);
+            }
+        });
 
+        mp = MediaPlayer.create(cat_calling_sound.this, R.raw.cat_come_on);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +50,7 @@ public class Pet_calling_sound extends AppCompatActivity {
                     mp.setLooping(true);
                     Thread();
                 } else {
-                    mp = MediaPlayer.create(Pet_calling_sound.this, R.raw.cat_come_on);
+                    mp = MediaPlayer.create(cat_calling_sound.this, R.raw.cat_come_on);
                 }
             }
         });

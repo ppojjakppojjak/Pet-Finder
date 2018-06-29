@@ -2,6 +2,7 @@ package com.ppojjakppojjak.ppojjakppojjak;
 
 import android.content.Context;
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,74 +21,30 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn1, btn2, btn3;
-    MediaPlayer mp;
-    TextView text;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn1 = (Button)findViewById(R.id.button1);
-        btn2 = (Button)findViewById(R.id.button2);
-
-        //text = (TextView)findViewById(R.id.text1);
-
-
-        mp = MediaPlayer.create(MainActivity.this, R.raw.cat_come_on);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
+        Button bcat = (Button)findViewById(R.id.button1);
+        Button bdog = (Button)findViewById(R.id.button2);
+        bcat.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if(mp != null){
-                    mp.start();
-                    mp.setLooping(true);
-                    Thread();
-                } else {
-                    mp = MediaPlayer.create(MainActivity.this, R.raw.cat_come_on);
-                }
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        cat_calling_sound.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
+        bdog.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mp.stop();
-                try
-                {
-                    mp.prepare();
-                }
-                catch(IOException ie)
-                {
-                    ie.printStackTrace();
-                }
-                mp.seekTo(0);
-                //mp.release();
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        dog_calling_sound.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
-
-
-    }
-
-    public void Thread(){
-        Runnable task = new Runnable(){
-
-
-            public void run(){
-                // 음악이 재생중일때
-                while(mp.isPlaying()){
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                }
-            }
-        };
-        Thread thread = new Thread(task);
-        thread.start();
     }
 }

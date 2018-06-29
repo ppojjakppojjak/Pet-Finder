@@ -4,11 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".dog_calling_sound" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/dog_category_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="217dp"
+            android:entries="@array/dog_sound_list">
+
+        </Spinner>
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +38,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginBottom="145dp"
-            android:text="cat" />
+            android:text="On" />
 
         <Button
             android:id="@+id/button2"
@@ -40,7 +51,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginBottom="60dp"
-            android:text="dog" />
+            android:text="Off" />
 
         <TextView
             android:id="@+id/text1"

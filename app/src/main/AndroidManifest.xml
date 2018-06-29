@@ -17,9 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Pet_calling_sound"
+            android:name=".cat_calling_sound"
             android:label="@string/title_activity_pet_calling_sound"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".dog_calling_sound"
+            android:label="@string/title_activity_pet_calling_sound"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

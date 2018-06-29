@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PpojjakPpojjak</string>
     <string name="title_activity_pet_calling_sound">Pet_calling_sound</string>
+    <string name="title_activity_cat_or_dog">cat_or_dog</string>
+    <string name="title_activity_dog_category_bar">dog_category_bar</string>
+    <string name="title_activity_dog_calling_sound3">dog_calling_sound3</string>
 </resources>
