@@ -29,6 +29,14 @@ public class MainMenuFragment extends Fragment {
         CardView cardView3 = view.findViewById(R.id.cardview_3);
         CardView cardView4 = view.findViewById(R.id.cardview_4);
 
+        cardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LocationActivity.class);
+                startActivity(intent);
+            }
+        });
+
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
