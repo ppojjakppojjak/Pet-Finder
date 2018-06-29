@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2EDEE"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/text_line"
+        android:gravity="center_vertical"
+        android:text="  1. 늦은 밤이나 이른 아침에 조용한 때에 집 \n      근처를 수색한다. "
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+
+
+</RelativeLayout>
