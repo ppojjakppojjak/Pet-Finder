@@ -17,11 +17,14 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+            <Button
+                android:background="@drawable/round_button"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"/>
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="입력한 정보에 따른\n예상 이동 범위를 알아 보세요"/>
@@ -42,11 +45,14 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+            <Button
+                android:background="@drawable/round_button"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"/>
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="펫을 부르는 소리를 사용해\n~를 알아 보세요"/>
@@ -67,11 +73,14 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+            <Button
+                android:background="@drawable/round_button"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"/>
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="펫을 찾기 위한 유인책을 알아 보세요"/>
@@ -92,11 +101,14 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+            <Button
+                android:background="@drawable/round_button"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"/>
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="펫을 찾기 위한 포스터를 제작해 보세요"/>

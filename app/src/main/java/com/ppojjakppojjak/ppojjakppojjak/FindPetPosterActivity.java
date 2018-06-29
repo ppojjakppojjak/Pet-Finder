@@ -5,16 +5,16 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Random;
+import java.util.List;
 
 import static com.ppojjakppojjak.ppojjakppojjak.R.layout.activity_find_pet_poster;
 
@@ -35,6 +35,12 @@ public class FindPetPosterActivity extends AppCompatActivity {
 
     public static TextView tvLostDay;
     public static Button btnSavePoster;
+    List<UploadImage> items = new ArrayList<>();
+    UploadImage[] item = new UploadImage[2];
+    ImageButton ibtnUploadImage1;
+    ImageButton ibtnUploadImage2;
+    Button btnBack;
+    int imageCount = 0;
 
     public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
@@ -60,6 +66,14 @@ public class FindPetPosterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(activity_find_pet_poster);
 
+        btnBack = findViewById(R.id.btn_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         tvLostDay = findViewById(R.id.tv_lost_day);
         tvLostDay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +91,7 @@ public class FindPetPosterActivity extends AppCompatActivity {
                     @Override
                     public void onPermissionGranted() {
                         Toast.makeText(FindPetPosterActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                        setScreenCapture();
+                        share();
                     }
 
                     @Override
@@ -94,72 +108,32 @@ public class FindPetPosterActivity extends AppCompatActivity {
 
             }
         });
-    }
 
-    private void setScreenCapture() {
-        try {
-            View view = findViewById(R.id.scroll_view);
-            view.buildDrawingCache();
-
-            Bitmap bitmap = loadBitmapFromView(view);
-
-            if(bitmap != null) {
-                screenshot(bitmap);
-            } else {
-
+        ibtnUploadImage1 = (ImageButton) findViewById(R.id.ibtn_upload_1);
+        ibtnUploadImage1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 0);
             }
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
-    }
+        });
 
-    public Bitmap loadBitmapFromView(View v) {
-        Bitmap b = Bitmap.createBitmap(v.getWidth(), v.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(b);
-        v.layout(0, 0, v.getLayoutParams().width, v.getLayoutParams().height);
-        v.draw(c);
-        BitmapDrawable d = new BitmapDrawable(getResources(), b);
-        return b;
-    }
-
-    public void screenshot(Bitmap bm) {
-        String extr = Environment.getExternalStorageDirectory().toString();
-
-        File mFolder = new File(extr);
-
-        if (!mFolder.exists()) {
-            mFolder.mkdir();
-        }
-
-        Random random = new Random();
-        String s = String.valueOf( random.nextInt(99999)) + ".jpg";
-        File file = new File(mFolder.getAbsolutePath(), s);
-        FileOutputStream fos = null;
-
-        try {
-            fos = new FileOutputStream(file);
-            bm.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-            fos.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-            Uri contentUri = Uri.fromFile(file); //out is your output file
-            mediaScanIntent.setData(contentUri);
-            this.sendBroadcast(mediaScanIntent);
-        } catch(SecurityException e) {
-            e.printStackTrace();
-        }
+        ibtnUploadImage2 = (ImageButton) findViewById(R.id.ibtn_upload_2);
+        ibtnUploadImage2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
     public void share() {
-        View container;
-        container = getWindow().getDecorView();
+        View container = findViewById(R.id.scroll_view);
         container.buildDrawingCache();
         Bitmap captureView = container.getDrawingCache();
         String address = Environment.getExternalStorageDirectory().getAbsolutePath() + "/capture.jpeg";
@@ -182,6 +156,32 @@ public class FindPetPosterActivity extends AppCompatActivity {
     public void showDatePickerDialog(View v) {
         android.support.v4.app.DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 0) {
+            try {
+                Bitmap image = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+
+                item[imageCount] = new UploadImage(image);
+                items.add(item[imageCount]);
+                imageCount++;
+
+                if(imageCount % 2 != 0) {
+                    ibtnUploadImage1.setScaleType(ImageButton.ScaleType.FIT_XY);
+                    ibtnUploadImage1.setImageBitmap(image);
+                } else {
+                    ibtnUploadImage2.setScaleType(ImageButton.ScaleType.FIT_XY);
+                    ibtnUploadImage2.setImageBitmap(image);
+                    imageCount = 0;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 
