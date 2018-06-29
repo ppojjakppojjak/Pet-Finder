@@ -8,8 +8,9 @@
 
     <Button
         android:id="@+id/btn_back"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/ic_chevron_left_black_24dp"
         android:onClick="mOnClick"/>
 
