@@ -83,12 +83,5 @@
             android:background="#B5B5B5"
             android:text="Off" />
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginRight="200dp" />
-
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
