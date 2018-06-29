@@ -9,19 +9,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#66C5B1"
     android:minHeight="?attr/actionBarSize"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_chevron_left_white_24dp"/>
 
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="유인책"
+    android:textStyle="bold"
     android:layout_gravity="center"
     android:id="@+id/toolbar_title"
     android:background="#66C5B1"
     android:textSize="20sp"
-    android:textColor="#000"
+    android:textColor="#ffff"
     />
 
 
