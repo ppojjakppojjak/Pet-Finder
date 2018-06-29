@@ -37,6 +37,34 @@ public class MainMenuFragment extends Fragment {
             }
         });
 
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle arguments = getArguments();
+                if(arguments.getString("key") == "dog") {
+                    Intent intent = new Intent(getActivity(), dog_calling_sound.class);
+                    startActivity(intent);
+                } else if(arguments.getString("key") == "cat") {
+                    Intent intent = new Intent(getActivity(), cat_calling_sound.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        cardView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle arguments = getArguments();
+                if(arguments.getString("key") == "dog") {
+                    Intent intent = new Intent(getActivity(), Allure_activity.class);
+                    startActivity(intent);
+                } else if(arguments.getString("key") == "cat") {
+                    Intent intent = new Intent(getActivity(), Allure_activity_cat.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

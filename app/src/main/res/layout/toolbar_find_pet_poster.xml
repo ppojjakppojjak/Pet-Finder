@@ -1,5 +1,6 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar_find_pet_poster"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,13 +13,15 @@
     app:contentInsetRight="0dp"
     app:contentInsetEnd="0dp"
     android:paddingLeft="16dp"
-    android:paddingRight="12dp">
+    android:paddingRight="12dp"
+    android:background="@color/Mint">
 
     <android.support.constraint.ConstraintLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:background="@color/Mint">
 
         <ImageButton
             android:id="@+id/ibtn_back"
@@ -28,11 +31,28 @@
             android:layout_alignParentTop="true"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/ic_chevron_left_black_24dp"
+            android:background="@drawable/ic_chevron_left_white_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/Mint"
+            android:text="전단지 만들기"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_share"
+            app:layout_constraintStart_toEndOf="@+id/ibtn_back"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:background="@color/Mint"
             android:id="@+id/tv_share"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -42,6 +62,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="공유"
+            android:textColor="#ffffff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

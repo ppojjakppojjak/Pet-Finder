@@ -14,11 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDG1mW5VXNXskZnxYpDYkLgIjlBJvBqze0"
-            />
+            android:value="AIzaSyDG1mW5VXNXskZnxYpDYkLgIjlBJvBqze0" />
 
         <activity android:name=".MainActivity" />
         <activity android:name=".FindDogPosterActivity" />
@@ -30,8 +28,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".FindCatPosterActivity" />
-        <activity android:name=".LocationActivity">
-        </activity>
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".Allure_activity" />
+        <activity android:name=".Allure_activity_cat" />
+        <activity android:name=".cat_calling_sound"></activity>
+        <activity android:name=".dog_calling_sound"></activity>
     </application>
 
 </manifest>

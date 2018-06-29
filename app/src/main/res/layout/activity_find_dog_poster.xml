@@ -24,6 +24,7 @@
         android:layout_below="@+id/toolbar"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:scrollbarThumbVertical="@null"
         android:scrollbarSize="0dp">
 
