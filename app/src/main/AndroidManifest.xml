@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Pet_calling_sound"
+            android:label="@string/title_activity_pet_calling_sound"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -18,9 +18,9 @@ import android.widget.TextView;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class Pet_calling_sound extends AppCompatActivity {
 
-    Button btn1, btn2, btn3;
+    Button btn1, btn2;
     MediaPlayer mp;
     TextView text;
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //text = (TextView)findViewById(R.id.text1);
 
 
-        mp = MediaPlayer.create(MainActivity.this, R.raw.cat_come_on);
+        mp = MediaPlayer.create(Pet_calling_sound.this, R.raw.cat_come_on);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     mp.setLooping(true);
                     Thread();
                 } else {
-                    mp = MediaPlayer.create(MainActivity.this, R.raw.cat_come_on);
+                    mp = MediaPlayer.create(Pet_calling_sound.this, R.raw.cat_come_on);
                 }
             }
         });
