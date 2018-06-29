@@ -26,7 +26,7 @@
         android:layout_marginTop="160dp"
         android:background="@drawable/text_line"
         android:gravity="center_vertical"
-        android:text="  2.좋아하던 소리 나는 장난감이 있다면, 소리를\n   내며 이동해 보세요."
+        android:text="  2.좋아하던 소리 나는 장난감이 있다면, 소리를\n    내며 이동해 보세요."
         android:textColor="#000"
         android:textSize="20dp" />
 
@@ -38,7 +38,7 @@
     android:layout_marginTop="250dp"
     android:background="@drawable/text_line"
     android:gravity="center_vertical"
-    android:text="  3. 좋아하던 간식이나 개 껌 등을 원래 포장지에\n   넣고 흔들며 돌아다녀 보세요."
+    android:text="  3. 좋아하던 간식이나 개 껌 등을 원래 포장지에\n     넣고 흔들며 돌아다녀 보세요."
     android:textColor="#000"
     android:textSize="20dp" />
 
@@ -50,7 +50,7 @@
         android:layout_marginTop="340dp"
         android:background="@drawable/text_line"
         android:gravity="center_vertical"
-        android:text="  4. 개가 먹던 간식이나 개 껌 등을 원래 포장지에 넣은 상태에서 흔들어서 소리를 내보시고, 개의 이름을 불러보세요."
+        android:text="  4. 개가 먹던 간식이나 개 껌 등을 원래 포장지에\n    넣은 상태에서 흔들어서 소리를 내보시고, 개의\n    이름을 불러보세요."
         android:textColor="#000"
         android:textSize="20dp" />
 

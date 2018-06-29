@@ -26,7 +26,7 @@
         android:layout_marginTop="158dp"
         android:background="@drawable/text_line"
         android:gravity="center_vertical"
-        android:text="  2.특히 해당지역의 유기견 보호소\n  (관할관청에 문의하면 알 수 있음)에 문의해 \n  보세요."
+        android:text="  2.특히 해당지역의 유기견 보호소\n    (관할관청에 문의하면 알 수 있음)에 문의해 \n    보세요."
         android:textColor="#000"
         android:textSize="20dp" />
 

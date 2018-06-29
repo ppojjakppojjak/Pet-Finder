@@ -14,7 +14,7 @@
         android:layout_marginTop="51dp"
         android:background="@drawable/text_line"
         android:gravity="center_vertical"
-        android:text="  1. 개의 집이나 개가 이용했던 쿠션, 이불 등을 문\n   앞에 두도록 하고, 개가 가지고 놀던 장난감도 \n    바깥에 두면 도움이 됩니다. "
+        android:text="  1. 개의 집이나 개가 이용했던 쿠션, 이불 등을 문\n    앞에 두도록 하고, 개가 가지고 놀던 장난감도 \n     바깥에 두면 도움이 됩니다. "
         android:textColor="#000"
         android:textSize="20dp" />
 

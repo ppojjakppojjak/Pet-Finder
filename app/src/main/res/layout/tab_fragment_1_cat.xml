@@ -14,7 +14,7 @@
         android:layout_marginTop="51dp"
         android:background="@drawable/text_line"
         android:gravity="center_vertical"
-        android:text="  1. 늦은 밤이나 이른 아침에 조용한 때에 집 \n    근처를 수색한다. "
+        android:text="  1. 늦은 밤이나 이른 아침에 조용한 때에 집 \n      근처를 수색한다. "
         android:textColor="#000"
         android:textSize="20dp" />
 

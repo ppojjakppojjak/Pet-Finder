@@ -12,6 +12,9 @@
         <item name="android:background">#bdddd6</item>
         <item name="android:textColorTertiary">#fff</item>
         <item name="android:textColor">#fff</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
