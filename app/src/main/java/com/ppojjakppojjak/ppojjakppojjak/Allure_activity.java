@@ -17,21 +17,19 @@ public class Allure_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allure_activity);
-
-
-        /*
-        // Adding Toolbar to the activity
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+/*
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 */
 
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab One"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab Two"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab Three"));
+        tabLayout.addTab(tabLayout.newTab().setText("행동"));
+        tabLayout.addTab(tabLayout.newTab().setText("소리"));
+        tabLayout.addTab(tabLayout.newTab().setText("냄새"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
 
         // Initializing ViewPager
         viewPager = (ViewPager) findViewById(R.id.pager);
