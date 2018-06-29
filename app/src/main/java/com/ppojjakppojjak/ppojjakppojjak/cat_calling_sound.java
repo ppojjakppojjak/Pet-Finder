@@ -1,5 +1,6 @@
 package com.ppojjakppojjak.ppojjakppojjak;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +15,10 @@ import java.io.IOException;
 
 public class cat_calling_sound extends AppCompatActivity {
 
-    Button btn1, btn2;
+    Button btn1, btn2, btnBack;
     MediaPlayer mp;
     TextView text;
-    public static String BOARD;
+    String sound_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,28 @@ public class cat_calling_sound extends AppCompatActivity {
         final Spinner spinner = (Spinner)findViewById(R.id.cat_category_bar);
         btn1 = (Button)findViewById(R.id.button1);
         btn2 = (Button)findViewById(R.id.button2);
+        btnBack = (Button)findViewById(R.id.button_back);
 
-        ArrayAdapter adapter  = ArrayAdapter.createFromResource(this,R.array.cat_sound_list,android.R.layout.simple_spinner_item);
+        final ArrayAdapter spinneradapter  = ArrayAdapter.createFromResource(this,R.array.cat_sound_list,android.R.layout.simple_spinner_item);
+        spinner.setAdapter(spinneradapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                BOARD = (String) spinner.getItemAtPosition(i).toString();
+                if(spinneradapter.getItem(i).toString().equals("cat_come_on")) {
+                    if(mp!=null){
+                        mp.stop();
+                        mp.release();
+                    }
+                    mp = MediaPlayer.create(cat_calling_sound.this, R.raw.cat_come_on);
+
+                }
+                else if(spinneradapter.getItem(i).toString().equals("cat_miss_you")){
+                    if(mp!=null){
+                        mp.stop();
+                        mp.release();
+                    }
+                    mp = MediaPlayer.create(cat_calling_sound.this, R.raw.cat_miss_you);
+                }
             }
 
             @Override
@@ -41,7 +58,7 @@ public class cat_calling_sound extends AppCompatActivity {
             }
         });
 
-        mp = MediaPlayer.create(cat_calling_sound.this, R.raw.cat_come_on);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +88,17 @@ public class cat_calling_sound extends AppCompatActivity {
                 //mp.release();
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MainActivity.class); // 다음 넘어갈 클래스 지정
+                mp.stop();
+                mp.release();
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
 
 
     }
@@ -81,13 +109,18 @@ public class cat_calling_sound extends AppCompatActivity {
 
             public void run(){
                 // 음악이 재생중일때
-                while(mp.isPlaying()){
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
+                try {
+                    while (mp.isPlaying()) {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
                     }
+                }
+                catch (IllegalStateException e){
+                    e.printStackTrace();
                 }
             }
         };

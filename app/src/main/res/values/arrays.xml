@@ -2,7 +2,7 @@
 <resources>
     <string-array name="cat_sound_list">
         <item>cat_come_on</item>
-        <item>cat_miss_you/item>
+        <item>cat_miss_you</item>
     </string-array>
     <string-array name="dog_sound_list">
         <item>howling1</item>
