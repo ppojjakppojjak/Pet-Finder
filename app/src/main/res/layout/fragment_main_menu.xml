@@ -9,7 +9,9 @@
         android:id="@+id/cardview_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,17 +19,31 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <Button
-                android:background="@drawable/round_button"
+            <ImageView
+                android:background="@drawable/ibtn_location"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"/>
 
-            <TextView
-                android:layout_marginLeft="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="입력한 정보에 따른\n예상 이동 범위를 알아 보세요"/>
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="예상 이동 범위"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="펫의 예상\n이동 범위를 알아보세요"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -37,7 +53,9 @@
         android:id="@+id/cardview_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,17 +63,31 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <Button
-                android:background="@drawable/round_button"
+            <ImageView
+                android:background="@drawable/ibtn_call"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"/>
 
-            <TextView
-                android:layout_marginLeft="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="펫을 부르는 소리를 사용해\n~를 알아 보세요"/>
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="펫 부르기"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="펫을 부르는\n소리를 사용해보세요"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -65,7 +97,9 @@
         android:id="@+id/cardview_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,17 +107,31 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <Button
-                android:background="@drawable/round_button"
+            <ImageView
+                android:background="@drawable/ibtn_lure"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"/>
 
-            <TextView
-                android:layout_marginLeft="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="펫을 찾기 위한 유인책을 알아 보세요"/>
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="유인책"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="펫을 유인할 수 있는\n유인책을 알아보세요"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -93,7 +141,9 @@
         android:id="@+id/cardview_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,17 +151,31 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <Button
-                android:background="@drawable/round_button"
+            <ImageView
+                android:background="@drawable/ibtn_poster"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"/>
 
-            <TextView
-                android:layout_marginLeft="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="펫을 찾기 위한 포스터를 제작해 보세요"/>
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전단지 만들기"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="펫을 찾는 전단지를\n간단하게 제작해보세요"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

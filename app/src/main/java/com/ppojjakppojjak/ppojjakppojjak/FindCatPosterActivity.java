@@ -93,13 +93,13 @@ public class FindCatPosterActivity extends AppCompatActivity {
                 PermissionListener permissionlistener = new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
-                        Toast.makeText(FindCatPosterActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FindCatPosterActivity.this, "포스터 변환 완료!", Toast.LENGTH_SHORT).show();
                         share();
                     }
 
                     @Override
                     public void onPermissionDenied(ArrayList<String> deniedPermissions) {
-                        Toast.makeText(FindCatPosterActivity.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FindCatPosterActivity.this, "포스터 변환 실패\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
                     }
                 };
 

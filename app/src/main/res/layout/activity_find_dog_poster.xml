@@ -21,7 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F2EDEE"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbarThumbVertical="@null"
+        android:scrollbarSize="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,12 +131,14 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:background="#F3EA23"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:padding="10dp">
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:background="@android:color/transparent"
                     android:hint="이름"/>
 
                 <TextView
@@ -145,6 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:background="@android:color/transparent"
                     android:hint="견종"/>
 
                 <TextView
@@ -158,6 +165,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:textAlignment="center"
+                    android:background="@android:color/transparent"
                     android:hint="나이"/>
 
                 <TextView
@@ -170,6 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:background="@android:color/transparent"
                     android:hint="성별"/>
 
             </LinearLayout>
@@ -203,6 +212,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:background="@android:color/transparent"
                 android:hint="연락처"/>
 
         </LinearLayout>
