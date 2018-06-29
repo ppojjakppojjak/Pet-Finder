@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class ChoosePetFragment extends Fragment {
     @Override
@@ -21,10 +21,10 @@ public class ChoosePetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_choose_pet, null);
-        Button btnChooseDog = view.findViewById(R.id.btn_choose_dog);
-        Button btnChooseCat = view.findViewById(R.id.btn_choose_cat);
+        ImageButton ibtnDog = view.findViewById(R.id.ibtn_choose_dog);
+        ImageButton ibtnCat = view.findViewById(R.id.ibtn_choose_cat);
 
-        btnChooseDog.setOnClickListener(new View.OnClickListener() {
+        ibtnDog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainMenuFragment mainMenuFragment = new MainMenuFragment();
@@ -38,7 +38,7 @@ public class ChoosePetFragment extends Fragment {
             }
         });
 
-        btnChooseCat.setOnClickListener(new View.OnClickListener() {
+        ibtnCat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainMenuFragment mainMenuFragment = new MainMenuFragment();

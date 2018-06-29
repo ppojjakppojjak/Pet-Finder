@@ -11,7 +11,7 @@
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="당신의 반려동물을 골라 주세요"
+        android:text="당신의 펫을 선택해 주세요"
         android:textSize="20sp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"/>
@@ -22,22 +22,20 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp">
 
-        <Button
-            android:id="@+id/btn_choose_dog"
+        <ImageButton
+            android:id="@+id/ibtn_choose_dog"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/round_button"
-            android:text="DOG" />
+            android:background="@drawable/ibtn_dog"/>
 
-        <Button
-            android:id="@+id/btn_choose_cat"
+        <ImageButton
+            android:id="@+id/ibtn_choose_cat"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/round_button"
-            android:text="CAT" />
+            android:background="@drawable/ibtn_cat"/>
     </FrameLayout>
 
 </LinearLayout>
