@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class MainMenuFragment extends Fragment {
+    Bundle bundle = getArguments();
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +32,14 @@ public class MainMenuFragment extends Fragment {
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FindPetPosterActivity.class);
-                startActivity(intent);
+                Bundle arguments = getArguments();
+                if(arguments.getString("key") == "dog") {
+                    Intent intent = new Intent(getActivity(), FindDogPosterActivity.class);
+                    startActivity(intent);
+                } else if(arguments.getString("key") == "cat") {
+                    Intent intent = new Intent(getActivity(), FindCatPosterActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 

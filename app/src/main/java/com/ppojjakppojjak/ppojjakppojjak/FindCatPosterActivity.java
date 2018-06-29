@@ -29,9 +29,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import static com.ppojjakppojjak.ppojjakppojjak.R.layout.activity_find_pet_poster;
+import static com.ppojjakppojjak.ppojjakppojjak.R.layout.activity_find_cat_poster;
 
-public class FindPetPosterActivity extends AppCompatActivity {
+public class FindCatPosterActivity extends AppCompatActivity {
 
     public static TextView tvLostDay;
     public static TextView tvShare;
@@ -64,7 +64,7 @@ public class FindPetPosterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_find_pet_poster);
+        setContentView(activity_find_cat_poster);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -93,17 +93,17 @@ public class FindPetPosterActivity extends AppCompatActivity {
                 PermissionListener permissionlistener = new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
-                        Toast.makeText(FindPetPosterActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FindCatPosterActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
                         share();
                     }
 
                     @Override
                     public void onPermissionDenied(ArrayList<String> deniedPermissions) {
-                        Toast.makeText(FindPetPosterActivity.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FindCatPosterActivity.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
                     }
                 };
 
-                TedPermission.with(FindPetPosterActivity.this)
+                TedPermission.with(FindCatPosterActivity.this)
                         .setPermissionListener(permissionlistener)
                         .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
                         .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -157,7 +157,7 @@ public class FindPetPosterActivity extends AppCompatActivity {
     }
 
     public void showDatePickerDialog(View v) {
-        android.support.v4.app.DialogFragment newFragment = new DatePickerFragment();
+        android.support.v4.app.DialogFragment newFragment = new FindCatPosterActivity.DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
@@ -187,5 +187,3 @@ public class FindPetPosterActivity extends AppCompatActivity {
         }
     }
 }
-
-

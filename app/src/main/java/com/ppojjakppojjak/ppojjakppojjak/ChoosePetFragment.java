@@ -28,14 +28,29 @@ public class ChoosePetFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainMenuFragment mainMenuFragment = new MainMenuFragment();
+                Bundle arguments = new Bundle();
+                arguments.putString("key", "dog");
+                mainMenuFragment.setArguments(arguments);
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame, mainMenuFragment);
-                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
 
+        btnChooseCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainMenuFragment mainMenuFragment = new MainMenuFragment();
+                Bundle arguments = new Bundle();
+                arguments.putString("key", "cat");
+                mainMenuFragment.setArguments(arguments);
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame, mainMenuFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
     }
