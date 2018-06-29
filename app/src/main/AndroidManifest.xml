@@ -24,6 +24,10 @@
             android:name=".dog_calling_sound"
             android:label="@string/title_activity_pet_calling_sound"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".find_my_location"
+            android:label="@string/title_activity_find_my_location"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

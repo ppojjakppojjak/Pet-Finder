@@ -4,4 +4,5 @@
     <string name="title_activity_cat_or_dog">cat_or_dog</string>
     <string name="title_activity_dog_category_bar">dog_category_bar</string>
     <string name="title_activity_dog_calling_sound3">dog_calling_sound3</string>
+    <string name="title_activity_find_my_location">find_my_location</string>
 </resources>
