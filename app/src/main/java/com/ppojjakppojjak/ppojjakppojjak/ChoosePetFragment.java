@@ -41,13 +41,13 @@ public class ChoosePetFragment extends Fragment {
         ibtnCat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainMenuFragment mainMenuFragment = new MainMenuFragment();
+                MainMenucatFragment mainMenucatFragment = new MainMenucatFragment();
                 Bundle arguments = new Bundle();
                 arguments.putString("key", "cat");
-                mainMenuFragment.setArguments(arguments);
+                mainMenucatFragment.setArguments(arguments);
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame, mainMenuFragment);
+                fragmentTransaction.replace(R.id.frame, mainMenucatFragment);
                 fragmentTransaction.commit();
             }
         });

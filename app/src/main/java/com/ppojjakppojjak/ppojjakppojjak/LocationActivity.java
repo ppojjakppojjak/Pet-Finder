@@ -40,6 +40,8 @@ import java.util.Locale;
 import noman.googleplaces.PlacesException;
 import noman.googleplaces.PlacesListener;
 
+import static android.content.Context.LOCATION_SERVICE;
+
 
 public class LocationActivity extends AppCompatActivity
         implements
