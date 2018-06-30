@@ -33,7 +33,6 @@
         <activity android:name=".Allure_activity_cat" />
         <activity android:name=".cat_calling_sound" />
         <activity android:name=".dog_calling_sound" />
-        <activity android:name=".weather_N_date_time"></activity>
     </application>
 
 </manifest>
