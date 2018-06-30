@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainMenuFragment extends Fragment {
+public class MainMenucatFragment extends Fragment {
     Bundle bundle = getArguments();
 
 
@@ -22,7 +22,7 @@ public class MainMenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cat_main_menu, null);
+        View view = inflater.inflate(R.layout.fragment_main_menu, null);
 
         CardView cardView1 = view.findViewById(R.id.cardview_1);
         CardView cardView2 = view.findViewById(R.id.cardview_2);
